@@ -50,19 +50,108 @@ function App() {
         { from: "Me", text: "Yeah! That last goal was insane ⚽", timestamp: "8:46 AM" },
       ],
     },
-  ];
+    {
+      id: 6,
+      name: "Fiona",
+      avatar: "https://i.pravatar.cc/150?img=6",
+      messages: [
+        { from: "Fiona", text: "Where are you now?", timestamp: "3:10 PM" },
+        { from: "Me", text: "On the way!", timestamp: "3:11 PM" }
+      ]
+    },
+    {
+      id: 7,
+      name: "George",
+      avatar: "https://i.pravatar.cc/150?img=7",
+      messages: [
+        { from: "George", text: "Bro, check this meme 😂", timestamp: "7:20 AM" },
+        { from: "Me", text: "LOL send more 🤣", timestamp: "7:21 AM" }
+      ]
+    },
+    {
+      id: 8,
+      name: "Hannah",
+      avatar: "https://i.pravatar.cc/150?img=8",
+      messages: [
+        { from: "Hannah", text: "Call me when you're free", timestamp: "6:55 PM" },
+        { from: "Me", text: "Sure, will do", timestamp: "6:57 PM" }
+      ]
+    },
+    {
+      id: 9,
+      name: "Ian",
+      avatar: "https://i.pravatar.cc/150?img=9",
+      messages: [
+        { from: "Ian", text: "Game tonight?", timestamp: "4:15 PM" },
+        { from: "Me", text: "I'm in!", timestamp: "4:16 PM" }
+      ]
+    },
+    {
+      id: 10,
+      name: "Jenny",
+      avatar: "https://i.pravatar.cc/150?img=10",
+      messages: [
+        { from: "Jenny", text: "Send the notes please", timestamp: "11:50 AM" },
+        { from: "Me", text: "Just sent ✅", timestamp: "11:52 AM" }
+      ]
+    },
+    {
+      id: 11,
+      name: "Kevin",
+      avatar: "https://i.pravatar.cc/150?img=11",
+      messages: [
+        { from: "Kevin", text: "Lunch?", timestamp: "1:10 PM" },
+        { from: "Me", text: "Let's go!", timestamp: "1:11 PM" }
+      ]
+    },
+    {
+      id: 12,
+      name: "Lily",
+      avatar: "https://i.pravatar.cc/150?img=12",
+      messages: [
+        { from: "Lily", text: "Happy Birthday!! 🎉🎂", timestamp: "12:00 AM" },
+        { from: "Me", text: "Thank you so much! 😊", timestamp: "12:01 AM" }
+      ]
+    },
+    {
+      id: 13,
+      name: "Michael",
+      avatar: "https://i.pravatar.cc/150?img=13",
+      messages: [
+        { from: "Michael", text: "Meeting postponed", timestamp: "9:05 AM" },
+        { from: "Me", text: "Okay, thanks for update", timestamp: "9:06 AM" }
+      ]
+    },
+    {
+      id: 14,
+      name: "Nora",
+      avatar: "https://i.pravatar.cc/150?img=14",
+      messages: [
+        { from: "Nora", text: "Can you help me with this code?", timestamp: "10:20 AM" },
+        { from: "Me", text: "Sure, send it", timestamp: "10:21 AM" }
+      ]
+    },
+    {
+      id: 15,
+      name: "Oscar",
+      avatar: "https://i.pravatar.cc/150?img=15",
+      messages: [
+        { from: "Oscar", text: "Movie tonight?", timestamp: "8:15 PM" },
+        { from: "Me", text: "Which one?", timestamp: "8:16 PM" }
+      ]
+    }
 
-  // 🔹 Version key to reset localStorage if initialChats change
+  ];
   const DATA_VERSION = "v1.0.0";
 
-  // 🔹 Load data from localStorage or fall back to initialChats
+
   const [chats, setChats] = useState(() => {
     const stored = localStorage.getItem("chats");
     const version = localStorage.getItem("dataVersion");
     if (stored && version === DATA_VERSION) {
       return JSON.parse(stored);
     }
-    // reset localStorage if version changed
+
     localStorage.setItem("chats", JSON.stringify(initialChats));
     localStorage.setItem("dataVersion", DATA_VERSION);
     return initialChats;
@@ -70,12 +159,11 @@ function App() {
 
   const [selectedChat, setSelectedChat] = useState(chats[0]);
 
-  // 💾 Save chats whenever they change
   useEffect(() => {
     localStorage.setItem("chats", JSON.stringify(chats));
   }, [chats]);
 
-  // 📨 Send message handler
+
   const handleSendMessage = (chatId, messageText) => {
     const newMessage = {
       from: "Me",

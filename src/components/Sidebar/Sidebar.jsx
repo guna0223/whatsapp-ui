@@ -8,7 +8,16 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 function Sidebar({ chats, onSelectChat, selectedChat }) {
   return (
     <>
-
+      <div className="small-sidebar">
+        <div className="small-icons">
+          <div><i class="bi bi-chat-square-text"></i></div>
+          <div><i class="bi bi-arrow-repeat"></i></div>
+          <div><i class="bi bi-chat-square-dots"></i></div>
+          <div><i class="bi bi-people-fill"></i></div>
+          <hr />
+          <span></span>
+        </div>
+      </div>
       <div className="sidebar">
         <div className="sidebar-section">
           <h2 className="sidebar-title">
@@ -21,7 +30,7 @@ function Sidebar({ chats, onSelectChat, selectedChat }) {
         </div>
 
         <form action="">
-          <input type="text" placeholder="Search or start a newchat"/>
+          <input type="text" placeholder="Search or start a newchat" />
         </form>
 
         {chats.map((chat) => (
