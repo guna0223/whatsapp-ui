@@ -74,23 +74,5 @@ whatsapp-ui/
 
 ## Usage
 
-### Sending Messages
-1. Click on any chat from the sidebar
-2. Type your message in the input field at the bottom
-3. Press Enter or click the send button to send
-
-### Viewing Status
-1. Click on the "Status" tab in the sidebar
-2. Click on any status to view it in full-screen overlay
-
-### Searching Chats
-1. Use the search bar at the top of the sidebar
-2. Type a contact name to filter the chat list
-
-## Data Storage
-
-All chat messages are stored in the browser's localStorage. The data will persist across browser sessions. To clear all chat data, clear your browser's localStorage or use the application in incognito mode.
-
-## License
 
 MIT
